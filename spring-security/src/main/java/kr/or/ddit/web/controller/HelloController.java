@@ -36,5 +36,12 @@ public class HelloController {
 		return model;
 
 	}
+	
+	@RequestMapping(value = { "/test"}, method = RequestMethod.GET)
+	public String testPage() {
+		logger.debug("{}", "testPage()");
+		
+		return "test";
+	}
 
 }

@@ -12,7 +12,7 @@
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>classpath:/kr/or/ddit/spring/config/servlet-context.xml</param-value>
+			<param-value>classpath:kr/or/ddit/spring/config/servlet-context.xml</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
@@ -28,8 +28,9 @@
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
-			classpath:/kr/or/ddit/spring/config/spring-security.xml,
-			classpath:/kr/or/ddit/spring/config/spring-database.xml
+			classpath:kr/or/ddit/spring/config/spring-context.xml,
+			classpath:kr/or/ddit/spring/config/spring-security.xml,
+			classpath:kr/or/ddit/spring/config/spring-database.xml
 		</param-value>
 	</context-param>
 

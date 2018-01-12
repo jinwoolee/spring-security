@@ -1,41 +1,31 @@
 package kr.or.ddit.user.model;
 
-public class UserDetail{
-		
-	private	String	username;
-	private	String	password;
-	private	String	enabled;
+import java.util.Collection;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.User;
+
+public class UserDetail extends User{
 	
-	public UserDetail() {
+	private String orgCd;
+	
+	public UserDetail(String username, String password, String orgCd, Collection<? extends GrantedAuthority> authorities) {
+		super(username, password, authorities);
+		
+		this.orgCd = orgCd;
 	}
 
-	public String getUsername() {
-		return username;
+	public String getOrgCd() {
+		return orgCd;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setOrgCd(String orgCd) {
+		this.orgCd = orgCd;
+	}
+	
+	public String getTest() {
+		return "test1234";
 	}
 
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public String getEnabled() {
-		return enabled;
-	}
-
-	public void setEnabled(String enabled) {
-		this.enabled = enabled;
-	}
-
-	@Override
-	public String toString() {
-		return "UserDetail [username=" + username + ", password=" + password + ", enabled=" + enabled + "]";
-	}
-
+	
 }

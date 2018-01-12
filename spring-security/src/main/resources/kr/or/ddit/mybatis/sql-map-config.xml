@@ -8,7 +8,7 @@
 	</settings>
 	
 	<typeAliases>
-		<typeAlias alias="userDetail" type="kr.or.ddit.user.model.UserDetail"/>
+		<typeAlias alias="userVo" type="kr.or.ddit.user.model.UserVo"/>
 		<typeAlias alias="userRoles" type="kr.or.ddit.user.model.UserRoles"/>
     </typeAliases>
     

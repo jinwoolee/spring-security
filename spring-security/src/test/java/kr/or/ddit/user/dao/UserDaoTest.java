@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import kr.or.ddit.user.model.UserDetail;
+import kr.or.ddit.user.model.UserVo;
 import kr.or.ddit.user.model.UserRoles;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -27,9 +27,10 @@ public class UserDaoTest {
 	public void usersByUsernameTest() {
 		String username = "brown";
 		
-		List<UserDetail> userDetailList = userDao.usersByUsername(username);
+		UserVo userDetail = userDao.usersByUsername(username);
 		
-		assertEquals(1, userDetailList.size());
+		assertNotNull(userDetail);
+		assertEquals("123456", userDetail.getPassword());
 	}
 	
 	@Test

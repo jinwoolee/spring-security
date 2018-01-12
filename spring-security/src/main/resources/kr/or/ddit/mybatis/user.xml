@@ -12,8 +12,8 @@
 </resultMap>
 
 <!-- 사용자 조회 -->
-<select id="usersByUsername" parameterType="String" resultType="userDetail">
-	select *
+<select id="usersByUsername" parameterType="String" resultType="userVo">
+	select username, password, enabled, 'lineTown' orgCd
 	from users
 	where username = #{username}
 </select>
