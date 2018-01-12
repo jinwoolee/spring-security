@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="user">
+
+<resultMap id="userRolesMap" type="userRoles">
+	<id column="username" property="username"/>
+	<collection property="roles" ofType="string">
+		<result column="role" property="role"/>
+	</collection>
+</resultMap>
+
+<!-- 사용자 조회 -->
+<select id="usersByUsername" parameterType="String" resultType="userDetail">
+	select *
+	from users
+	where username = #{username}
+</select>
+
+<!-- 사용자 권한 조회 -->
+<select id="authoritiesByUsername" parameterType="String" resultMap="userRolesMap">
+	select *
+	 from user_roles
+	where username = #{username}
+</select>
+</mapper>

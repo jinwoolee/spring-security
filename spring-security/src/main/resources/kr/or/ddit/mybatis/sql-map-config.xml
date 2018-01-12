@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>  
+	<settings>
+	 	<setting name="localCacheScope" value="STATEMENT"></setting>
+	</settings>
+	
+	<typeAliases>
+		<typeAlias alias="userDetail" type="kr.or.ddit.user.model.UserDetail"/>
+		<typeAlias alias="userRoles" type="kr.or.ddit.user.model.UserRoles"/>
+    </typeAliases>
+    
+    <mappers>
+		<mapper resource="kr/or/ddit/mybatis/user.xml"/>
+	</mappers>
+</configuration>
