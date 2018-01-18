@@ -10,9 +10,11 @@
 	<typeAliases>
 		<typeAlias alias="userVo" type="kr.or.ddit.user.model.UserVo"/>
 		<typeAlias alias="userRoles" type="kr.or.ddit.user.model.UserRoles"/>
+		<typeAlias alias="roleVo" type="kr.or.ddit.role.model.RoleVo"/>
     </typeAliases>
     
     <mappers>
 		<mapper resource="kr/or/ddit/mybatis/user.xml"/>
+		<mapper resource="kr/or/ddit/mybatis/role.xml"/>
 	</mappers>
 </configuration>

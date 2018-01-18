@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>test.jsp</title>
+<title>Insert title here</title>
 </head>
 <body>
-test.jsp
+access denied
 </body>
 </html>
