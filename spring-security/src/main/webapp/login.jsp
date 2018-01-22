@@ -10,7 +10,6 @@
 <link href="/css/signin.css" rel="stylesheet">
 <%@include file="/commonJsp/jquery.jsp" %>
 <%@include file="/commonJsp/bootstrap.jsp"%>	<%--정적 include : page가 삽입되어 하나의 jsp파일로 컴파일된다. --%>
-<%--<jsp:include page="/jsp/common/uppermenu.jsp" flush="true"/> --%> <%--동적 include : page가 삽입되어 하나의 jsp파일로 컴파일된다. --%>
 
 </head>
 <body>
@@ -20,12 +19,7 @@
 			<label for="inputEmail" class="sr-only">Email address</label>
 			<input type="text" id="inputEmail" name="email" class="form-control" placeholder="Email address" required autofocus value="cony">
 			<label for="inputPassword" class="sr-only">Password</label>
-			<input type="password" id="inputPassword" name="pass" class="form-control" placeholder="Password"  value="123456">
-			<div class="checkbox">
-				<label> <input type="checkbox" name="rememberMe" />
-					Remember me
-				</label>
-			</div>
+			<input type="password" id="inputPassword" name="pass" class="form-control" placeholder="Password"  value="12345">	
 			<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
 		</form>
 	</div>
