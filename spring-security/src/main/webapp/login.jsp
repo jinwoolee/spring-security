@@ -20,12 +20,7 @@
 			<label for="inputEmail" class="sr-only">Email address</label>
 			<input type="text" id="inputEmail" name="email" class="form-control" placeholder="Email address" required autofocus value="cony">
 			<label for="inputPassword" class="sr-only">Password</label>
-			<input type="password" id="inputPassword" name="pass" class="form-control" placeholder="Password"  value="123456">
-			<div class="checkbox">
-				<label> <input type="checkbox" name="rememberMe" />
-					Remember me
-				</label>
-			</div>
+			<input type="password" id="inputPassword" name="pass" class="form-control" placeholder="Password"  value="12345">
 			<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
 		</form>
 	</div>
