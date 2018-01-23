@@ -34,11 +34,11 @@ comment on table users is '사용자';
 comment on column users.username is '아이디';
 comment on column users.password is '비밀번호';
 
-insert into users (userid, password) values('brown', '1234');
-insert into users (userid, password) values('cony', '1234');
-insert into users (userid, password) values('sally', '1234');
-insert into users (userid, password) values('james', '1234');
-insert into users (userid, password) values('moon', '1234');
+insert into users (username, password) values('brown', '1234');
+insert into users (username, password) values('cony', '1234');
+insert into users (username, password) values('sally', '1234');
+insert into users (username, password) values('james', '1234');
+insert into users (username, password) values('moon', '1234');
 
 CREATE TABLE USER_ROLES(
 	USERNAME VARCHAR2(50) NOT NULL, 
@@ -48,15 +48,15 @@ CREATE TABLE USER_ROLES(
 );
 
 comment on table user_roles is '사용자 권한';
-comment on column user_roles.USERNAME is '상용자 아이디';
+comment on column user_roles.USERNAME is '사용자 아이디';
 comment on column user_roles.ROLE is '보유 권한';
   
-insert into user_roles (userid, role) values ('brown', 'ROLE_USER');
-insert into user_roles (userid, role) values ('brown', 'ROLE_ADMIN');
-insert into user_roles (userid, role) values ('cony', 'ROLE_USER');
-insert into user_roles (userid, role) values ('sally', 'ROLE_USER');
-insert into user_roles (userid, role) values ('james', 'ROLE_USER');
-insert into user_roles (userid, role) values ('moon', 'ROLE_USER');  
+insert into user_roles (username, role) values ('brown', 'ROLE_USER');
+insert into user_roles (username, role) values ('brown', 'ROLE_ADMIN');
+insert into user_roles (username, role) values ('cony', 'ROLE_USER');
+insert into user_roles (username, role) values ('sally', 'ROLE_USER');
+insert into user_roles (username, role) values ('james', 'ROLE_USER');
+insert into user_roles (username, role) values ('moon', 'ROLE_USER');  
  
 
 create table secured_resources (
@@ -83,14 +83,14 @@ insert into secured_resources (resource_id, resource_name, resource_pattern, res
 create table secured_resources_role (
 	resource_id varchar2(10) not null,
 	role varchar2(50) not null,
-	primary key(resource_id, role)
+	primary key(resource_id, role),
+	CONSTRAINT FK_SECURED_RESOURCES_TO_SECURED_RESOURCES_ROLE FOREIGN KEY (RESOURCE_ID)
+		 REFERENCES SECURED_RESOURCES (RESOURCE_ID);
 );
 
 comment on table secured_resources_role is '보안대상리소스 권한 매핑';
 comment on column secured_resources.resource_id is '리소스 아이디';
 comment on column secured_resources.role is '권한';
-
-
 
 insert into secured_resources_role (resource_id, role) values ('R0001', 'ROLE_ADMIN');
 insert into secured_resources_role (resource_id, role) values ('R0002', 'ROLE_USER');

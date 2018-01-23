@@ -45,17 +45,12 @@
 		class="org.springframework.security.access.vote.AffirmativeBased">
 		<beans:constructor-arg>
 			<beans:list>
-				<beans:bean
-					class="org.springframework.security.access.vote.AuthenticatedVoter" />
-				<!-- <beans:bean class="org.springframework.security.access.vote.RoleVoter" /> -->
+				<beans:bean class="org.springframework.security.access.vote.AuthenticatedVoter" />
 				<beans:bean class="org.springframework.security.access.vote.RoleHierarchyVoter" >
 					<beans:constructor-arg name="roleHierarchy" ref="roleHierarchy"/>
-				</beans:bean>
-				
-				<beans:bean
-					class="org.springframework.security.web.access.expression.WebExpressionVoter" />
+				</beans:bean>				
+				<beans:bean class="org.springframework.security.web.access.expression.WebExpressionVoter" />
 			</beans:list>
-			
 		</beans:constructor-arg>
 	</beans:bean>
 
@@ -64,22 +59,13 @@
 	<beans:bean id="authenticationSuccessHandlerImpl"
 		class="kr.or.ddit.user.handler.AuthenticationSuccessHandlerImpl">
 		<beans:property name="defaultTargetUrl" value="/welcome" />
-		<!-- <beans:property name="alwaysUseDefaultTargetUrl" value="true"/> -->
+	</beans:bean>
+	
+	<beans:bean id="roleHierarchy"
+		class="org.springframework.security.access.hierarchicalroles.RoleHierarchyImpl">		
+		<beans:property name="hierarchy" ref="hierarchyString"/>
 	</beans:bean>
 	
 	<beans:bean id="hierarchyString" class="kr.or.ddit.role.util.CustomRoleHierarchy"/>
-	
-	<beans:bean id="roleHierarchy"
-		class="org.springframework.security.access.hierarchicalroles.RoleHierarchyImpl">
-		<!-- hard -->
-		<!-- <beans:property name="hierarchy">
-			<beans:value>
-				ROLE_ADMIN > ROLE_USER
-			</beans:value>
-		</beans:property> -->
-		
-		<!-- using db -->
-		<beans:property name="hierarchy" ref="hierarchyString"/>
-	</beans:bean>
 
 </beans:beans>
